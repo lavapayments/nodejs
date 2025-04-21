@@ -16,7 +16,7 @@ npm install @lavapayments/nodejs
 import { Lava } from '@lavapayments/nodejs';
 
 const lava = new Lava('your_secret_key', {
-  apiVersion: '2025-03-27.v1',
+  apiVersion: '2025-04-21.v1',
 });
 ```
 

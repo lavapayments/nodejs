@@ -1,14 +1,14 @@
 import type { Lava } from "./client";
 import {
-  CheckoutSession,
-  Connection,
+  CheckoutSessionsListParams,
   ConnectionsListParams,
-  ConnectionsListResponse,
   CreateCheckoutSessionParams,
-  Request,
+  ListResponse,
   RequestsListParams,
-  RequestsListResponse,
-  Usage,
+  RestCheckoutSession,
+  RestConnection,
+  RestRequest,
+  RestUsage,
   UsageParams,
 } from "./types";
 
@@ -24,7 +24,7 @@ export namespace Resources {
   /**
    * Checkout session related endpoints
    */
-  export class CheckoutResource extends BaseResource {
+  export class CheckoutSessionsResource extends BaseResource {
     /**
      * Create a checkout session
      * @param params Checkout session parameters
@@ -32,10 +32,39 @@ export namespace Resources {
      */
     async create(
       params: CreateCheckoutSessionParams,
-    ): Promise<CheckoutSession> {
-      return this.lava.request<CheckoutSession>("POST", "checkout_sessions", {
-        data: params,
-      });
+    ): Promise<RestCheckoutSession> {
+      return this.lava.request<RestCheckoutSession>(
+        "POST",
+        "checkout_sessions",
+        {
+          data: params,
+        },
+      );
+    }
+
+    /**
+     * List checkout sessions
+     * @param params List parameters
+     * @returns Paginated list of checkout sessions
+     */
+    async list(
+      params?: CheckoutSessionsListParams,
+    ): Promise<ListResponse<RestCheckoutSession>> {
+      const queryParams: Record<string, string> = {};
+
+      if (params) {
+        if (params.cursor) queryParams.cursor = params.cursor;
+        if (params.limit) queryParams.limit = params.limit.toString();
+        if (params.reference_id) queryParams.reference_id = params.reference_id;
+      }
+
+      return this.lava.request<ListResponse<RestCheckoutSession>>(
+        "GET",
+        "checkout_sessions",
+        {
+          query: queryParams,
+        },
+      );
     }
 
     /**
@@ -43,8 +72,8 @@ export namespace Resources {
      * @param checkoutSessionId Checkout session ID
      * @returns Checkout session details
      */
-    async retrieve(checkoutSessionId: string): Promise<CheckoutSession> {
-      return this.lava.request<CheckoutSession>(
+    async retrieve(checkoutSessionId: string): Promise<RestCheckoutSession> {
+      return this.lava.request<RestCheckoutSession>(
         "GET",
         `checkout_sessions/${checkoutSessionId}`,
       );
@@ -62,7 +91,7 @@ export namespace Resources {
      */
     async list(
       params?: ConnectionsListParams,
-    ): Promise<ConnectionsListResponse> {
+    ): Promise<ListResponse<RestConnection>> {
       const queryParams: Record<string, string> = {};
 
       if (params) {
@@ -71,9 +100,13 @@ export namespace Resources {
         if (params.reference_id) queryParams.reference_id = params.reference_id;
       }
 
-      return this.lava.request<ConnectionsListResponse>("GET", "connections", {
-        query: queryParams,
-      });
+      return this.lava.request<ListResponse<RestConnection>>(
+        "GET",
+        "connections",
+        {
+          query: queryParams,
+        },
+      );
     }
 
     /**
@@ -81,8 +114,8 @@ export namespace Resources {
      * @param connectionId Connection ID
      * @returns Connection details
      */
-    async retrieve(connectionId: string): Promise<Connection> {
-      return this.lava.request<Connection>(
+    async retrieve(connectionId: string): Promise<RestConnection> {
+      return this.lava.request<RestConnection>(
         "GET",
         `connections/${connectionId}`,
       );
@@ -110,7 +143,9 @@ export namespace Resources {
      * @param params List parameters
      * @returns Paginated list of requests
      */
-    async list(params?: RequestsListParams): Promise<RequestsListResponse> {
+    async list(
+      params?: RequestsListParams,
+    ): Promise<ListResponse<RestRequest>> {
       const queryParams: Record<string, string> = {};
 
       if (params) {
@@ -125,7 +160,7 @@ export namespace Resources {
           );
       }
 
-      return this.lava.request<RequestsListResponse>("GET", "requests", {
+      return this.lava.request<ListResponse<RestRequest>>("GET", "requests", {
         query: queryParams,
       });
     }
@@ -135,8 +170,8 @@ export namespace Resources {
      * @param requestId Request ID
      * @returns Request details
      */
-    async retrieve(requestId: string): Promise<Request> {
-      return this.lava.request<Request>("GET", `requests/${requestId}`);
+    async retrieve(requestId: string): Promise<RestRequest> {
+      return this.lava.request<RestRequest>("GET", `requests/${requestId}`);
     }
   }
 
@@ -149,7 +184,7 @@ export namespace Resources {
      * @param params Usage parameters
      * @returns Usage data
      */
-    async retrieve(params: UsageParams): Promise<Usage> {
+    async retrieve(params: UsageParams): Promise<RestUsage> {
       const queryParams: Record<string, string> = {
         start: params.start,
       };
@@ -163,7 +198,7 @@ export namespace Resources {
           Object.entries(params.metadata_filters),
         );
 
-      return this.lava.request<Usage>("GET", "usage", {
+      return this.lava.request<RestUsage>("GET", "usage", {
         query: queryParams,
       });
     }

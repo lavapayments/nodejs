@@ -1,7 +1,7 @@
 import { Resources } from "./resources";
 
 // Types for the package
-export type ApiVersion = "2025-03-27.v1";
+export type ApiVersion = "2025-04-21.v1";
 
 export interface Config {
   apiVersion: ApiVersion;
@@ -30,9 +30,9 @@ export class Lava {
   private readonly apiVersion: ApiVersion;
 
   /**
-   * The checkout resource
+   * The checkout sessions resource
    */
-  public readonly checkout: Resources.CheckoutResource;
+  public readonly checkoutSessions: Resources.CheckoutSessionsResource;
 
   /**
    * The connections resource
@@ -104,7 +104,7 @@ export class Lava {
         : "https://api.lavapayments.com/v1/");
 
     // Initialize resources
-    this.checkout = new Resources.CheckoutResource(this);
+    this.checkoutSessions = new Resources.CheckoutSessionsResource(this);
     this.connections = new Resources.ConnectionsResource(this);
     this.requests = new Resources.RequestsResource(this);
     this.usage = new Resources.UsageResource(this);
