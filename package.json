@@ -1,6 +1,6 @@
 {
   "name": "@lavapayments/nodejs",
-  "version": "3.0.1",
+  "version": "3.2.0",
   "description": "Backend SDK for Lava Payments API - enabling usage-based billing for AI services",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
@@ -23,6 +23,12 @@
     "ai",
     "openai",
     "anthropic",
+    "deepseek",
+    "mistral",
+    "xai",
+    "google",
+    "gemini",
+    "claude",
     "usage-based",
     "proxy"
   ],

@@ -83,6 +83,12 @@ export type RestRequest = {
     input_tokens: number;
     output_tokens: number;
     total_tokens: number;
+    input_characters: number;
+    output_characters: number;
+    total_characters: number;
+    input_seconds: number;
+    output_seconds: number;
+    total_seconds: number;
     input_cost: string;
     output_cost: string;
     total_cost: string;
@@ -96,8 +102,11 @@ export type RestRequest = {
       tier: {
         start: number;
         rate: string;
+        type: "tokens_1m" | "characters_1m" | "minutes";
       };
       tokens: number;
+      characters: number;
+      seconds: number;
       cost: string;
     }[];
   };
