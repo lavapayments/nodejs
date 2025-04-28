@@ -1,7 +1,7 @@
 import { Resources } from "./resources";
 
 // Types for the package
-export type ApiVersion = "2025-04-21.v1";
+export type ApiVersion = "2025-04-28.v1";
 
 export interface Config {
   apiVersion: ApiVersion;

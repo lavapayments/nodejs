@@ -72,11 +72,12 @@ export type RestConnection = {
 };
 export type RestRequest = {
   request_id: string;
+  status: "pending" | "completed" | "error";
   connection_id?: string;
   product_id?: string;
   provider: string;
   provider_key_type: "managed" | "unmanaged";
-  model: string;
+  model?: string;
   endpoint: string;
   response_id?: string;
   model_usage: {
@@ -118,7 +119,7 @@ export type RestRequest = {
   total_wallet_cost: string;
   total_merchant_cost: string;
   metadata: Record<string, string>;
-  timestamp: string;
+  timestamp?: string;
   created_at: string;
 };
 export type RestUsage = {
