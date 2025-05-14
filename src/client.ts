@@ -85,6 +85,16 @@ export class Lava {
   public readonly googleOpenaiCompatibleUrl: string;
 
   /**
+   * kluster.ai base URL for convenience
+   */
+  public readonly klusterUrl: string;
+
+  /**
+   * Inference.net base URL for convenience
+   */
+  public readonly inferenceUrl: string;
+
+  /**
    * Create a new Lava client
    * @param secretKey Your Lava secret key
    * @param config Configuration options
@@ -117,6 +127,8 @@ export class Lava {
     this.xaiUrl = `${this.baseUrl}forward?u=https://api.x.ai/v1`;
     this.googleUrl = `${this.baseUrl}forward?u=https://generativelanguage.googleapis.com/v1beta`;
     this.googleOpenaiCompatibleUrl = `${this.baseUrl}forward?u=https://generativelanguage.googleapis.com/v1beta/openai`;
+    this.klusterUrl = `${this.baseUrl}forward?u=https://api.kluster.ai/v1`;
+    this.inferenceUrl = `${this.baseUrl}forward?u=https://api.inference.net/v1`;
   }
 
   /**
