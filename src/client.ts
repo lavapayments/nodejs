@@ -50,49 +50,21 @@ export class Lava {
   public readonly usage: Resources.UsageResource;
 
   /**
-   * OpenAI base URL for convenience
+   * Provider URLs for convenience
    */
-  public readonly openaiUrl: string;
-
-  /**
-   * Anthropic base URL for convenience
-   */
-  public readonly anthropicUrl: string;
-
-  /**
-   * Mistral base URL for convenience
-   */
-  public readonly mistralUrl: string;
-
-  /**
-   * DeepSeek base URL for convenience
-   */
-  public readonly deepseekUrl: string;
-
-  /**
-   * xAI base URL for convenience
-   */
-  public readonly xaiUrl: string;
-
-  /**
-   * Google base URL for convenience
-   */
-  public readonly googleUrl: string;
-
-  /**
-   * Google OpenAI-compatible base URL for convenience
-   */
-  public readonly googleOpenaiCompatibleUrl: string;
-
-  /**
-   * kluster.ai base URL for convenience
-   */
-  public readonly klusterUrl: string;
-
-  /**
-   * Inference.net base URL for convenience
-   */
-  public readonly inferenceUrl: string;
+  public readonly providers: {
+    openai: string;
+    anthropic: string;
+    mistral: string;
+    deepseek: string;
+    xai: string;
+    google: string;
+    googleOpenaiCompatible: string;
+    kluster: string;
+    inference: string;
+    groq: string;
+    novita: string;
+  };
 
   /**
    * Create a new Lava client
@@ -120,15 +92,19 @@ export class Lava {
     this.usage = new Resources.UsageResource(this);
 
     // Initialize provider URLs
-    this.openaiUrl = `${this.baseUrl}forward?u=https://api.openai.com/v1`;
-    this.anthropicUrl = `${this.baseUrl}forward?u=https://api.anthropic.com/v1`;
-    this.mistralUrl = `${this.baseUrl}forward?u=https://api.mistral.ai/v1`;
-    this.deepseekUrl = `${this.baseUrl}forward?u=https://api.deepseek.com/v1`;
-    this.xaiUrl = `${this.baseUrl}forward?u=https://api.x.ai/v1`;
-    this.googleUrl = `${this.baseUrl}forward?u=https://generativelanguage.googleapis.com/v1beta`;
-    this.googleOpenaiCompatibleUrl = `${this.baseUrl}forward?u=https://generativelanguage.googleapis.com/v1beta/openai`;
-    this.klusterUrl = `${this.baseUrl}forward?u=https://api.kluster.ai/v1`;
-    this.inferenceUrl = `${this.baseUrl}forward?u=https://api.inference.net/v1`;
+    this.providers = {
+      openai: `${this.baseUrl}forward?u=https://api.openai.com/v1`,
+      anthropic: `${this.baseUrl}forward?u=https://api.anthropic.com/v1`,
+      mistral: `${this.baseUrl}forward?u=https://api.mistral.ai/v1`,
+      deepseek: `${this.baseUrl}forward?u=https://api.deepseek.com/v1`,
+      xai: `${this.baseUrl}forward?u=https://api.x.ai/v1`,
+      google: `${this.baseUrl}forward?u=https://generativelanguage.googleapis.com/v1beta`,
+      googleOpenaiCompatible: `${this.baseUrl}forward?u=https://generativelanguage.googleapis.com/v1beta/openai`,
+      kluster: `${this.baseUrl}forward?u=https://api.kluster.ai/v1`,
+      inference: `${this.baseUrl}forward?u=https://api.inference.net/v1`,
+      groq: `${this.baseUrl}forward?u=https://api.groq.com/openai/v1`,
+      novita: `${this.baseUrl}forward?u=https://api.novita.ai/v3/openai`,
+    };
   }
 
   /**

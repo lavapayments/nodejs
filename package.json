@@ -1,6 +1,6 @@
 {
   "name": "@lavapayments/nodejs",
-  "version": "4.0.1",
+  "version": "5.0.0",
   "description": "Backend SDK for Lava Payments API - enabling usage-based billing for AI services",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
