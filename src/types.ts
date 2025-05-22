@@ -65,6 +65,7 @@ export type RestConnection = {
     email: string;
     first_name: string;
     last_name: string;
+    autopay_enabled: boolean;
   };
   next_usage_reset: string;
   previous_usage_reset: string;
