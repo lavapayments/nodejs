@@ -104,7 +104,7 @@ export type RestRequest = {
       tier: {
         start: number;
         rate: string;
-        type: "tokens_1m" | "characters_1m" | "minutes";
+        type: "tokens_1m" | "characters_1m" | "minutes" | "requests";
       };
       tokens: number;
       characters: number;
