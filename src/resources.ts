@@ -10,6 +10,7 @@ import {
   RestRequest,
   RestUsage,
   UsageParams,
+  CreateRequestParams,
 } from "./types";
 
 export namespace Resources {
@@ -162,6 +163,17 @@ export namespace Resources {
 
       return this.lava.request<ListResponse<RestRequest>>("GET", "requests", {
         query: queryParams,
+      });
+    }
+
+    /**
+     * Create a request
+     * @param params Request parameters
+     * @returns Created request details
+     */
+    async create(params: CreateRequestParams): Promise<RestRequest> {
+      return this.lava.request<RestRequest>("POST", "requests", {
+        data: params,
       });
     }
 

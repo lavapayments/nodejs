@@ -25,6 +25,19 @@ export interface RequestsListParams {
   metadata_filters?: Record<string, string>;
 }
 
+export interface CreateRequestParams {
+  request_id: string;
+  connection_secret: string;
+  product_secret: string;
+  metadata?: Record<string, string>;
+  input_tokens?: number;
+  output_tokens?: number;
+  input_characters?: number;
+  output_characters?: number;
+  input_seconds?: number;
+  output_seconds?: number;
+}
+
 export interface RequestsListResponse {
   data: Request[];
   has_more: boolean;
