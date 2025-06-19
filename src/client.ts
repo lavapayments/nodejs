@@ -64,6 +64,7 @@ export class Lava {
     inference: string;
     groq: string;
     novita: string;
+    vercel: string;
   };
 
   /**
@@ -104,6 +105,7 @@ export class Lava {
       inference: `${this.baseUrl}forward?u=https://api.inference.net/v1`,
       groq: `${this.baseUrl}forward?u=https://api.groq.com/openai/v1`,
       novita: `${this.baseUrl}forward?u=https://api.novita.ai/v3/openai`,
+      vercel: `${this.baseUrl}forward?u=https://api.v0.dev/v1`,
     };
   }
 
