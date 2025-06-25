@@ -66,6 +66,7 @@ export class Lava {
     novita: string;
     vercel: string;
     together: string;
+    hyperbolic: string;
   };
 
   /**
@@ -108,6 +109,7 @@ export class Lava {
       novita: `${this.baseUrl}forward?u=https://api.novita.ai/v3/openai`,
       vercel: `${this.baseUrl}forward?u=https://api.v0.dev/v1`,
       together: `${this.baseUrl}forward?u=https://api.together.xyz/v1`,
+      hyperbolic: `${this.baseUrl}forward?u=https://api.hyperbolic.xyz/v1`,
     };
   }
 
