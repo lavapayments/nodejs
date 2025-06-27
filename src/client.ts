@@ -68,6 +68,7 @@ export class Lava {
     together: string;
     hyperbolic: string;
     elevenlabs: string;
+    sambanova: string;
   };
 
   /**
@@ -112,6 +113,7 @@ export class Lava {
       together: `${this.baseUrl}forward?u=https://api.together.xyz/v1`,
       hyperbolic: `${this.baseUrl}forward?u=https://api.hyperbolic.xyz/v1`,
       elevenlabs: `${this.baseUrl}forward?u=https://api.elevenlabs.io/v1`,
+      sambanova: `${this.baseUrl}forward?u=https://api.sambanova.ai/v1`,
     };
   }
 
