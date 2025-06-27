@@ -67,6 +67,7 @@ export class Lava {
     vercel: string;
     together: string;
     hyperbolic: string;
+    elevenlabs: string;
   };
 
   /**
@@ -110,6 +111,7 @@ export class Lava {
       vercel: `${this.baseUrl}forward?u=https://api.v0.dev/v1`,
       together: `${this.baseUrl}forward?u=https://api.together.xyz/v1`,
       hyperbolic: `${this.baseUrl}forward?u=https://api.hyperbolic.xyz/v1`,
+      elevenlabs: `${this.baseUrl}forward?u=https://api.elevenlabs.io/v1`,
     };
   }
 
