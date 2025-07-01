@@ -69,6 +69,8 @@ export class Lava {
     hyperbolic: string;
     elevenlabs: string;
     sambanova: string;
+    deepinfra: string;
+    cohere: string;
   };
 
   /**
@@ -114,6 +116,8 @@ export class Lava {
       hyperbolic: `${this.baseUrl}forward?u=https://api.hyperbolic.xyz/v1`,
       elevenlabs: `${this.baseUrl}forward?u=https://api.elevenlabs.io/v1`,
       sambanova: `${this.baseUrl}forward?u=https://api.sambanova.ai/v1`,
+      deepinfra: `${this.baseUrl}forward?u=https://api.deepinfra.com/v1/openai`,
+      cohere: `${this.baseUrl}forward?u=https://api.cohere.ai/compatibility/v1`,
     };
   }
 
