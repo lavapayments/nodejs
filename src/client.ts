@@ -71,6 +71,8 @@ export class Lava {
     sambanova: string;
     deepinfra: string;
     cohere: string;
+    parasail: string;
+    nebius: string;
   };
 
   /**
@@ -118,6 +120,8 @@ export class Lava {
       sambanova: `${this.baseUrl}forward?u=https://api.sambanova.ai/v1`,
       deepinfra: `${this.baseUrl}forward?u=https://api.deepinfra.com/v1/openai`,
       cohere: `${this.baseUrl}forward?u=https://api.cohere.ai/compatibility/v1`,
+      parasail: `${this.baseUrl}forward?u=https://api.parasail.io/v1`,
+      nebius: `${this.baseUrl}forward?u=https://api.studio.nebius.com/v1`,
     };
   }
 
