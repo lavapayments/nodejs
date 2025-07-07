@@ -73,6 +73,7 @@ export class Lava {
     cohere: string;
     parasail: string;
     nebius: string;
+    fireworks: string;
   };
 
   /**
@@ -122,6 +123,7 @@ export class Lava {
       cohere: `${this.baseUrl}forward?u=https://api.cohere.ai/compatibility/v1`,
       parasail: `${this.baseUrl}forward?u=https://api.parasail.io/v1`,
       nebius: `${this.baseUrl}forward?u=https://api.studio.nebius.com/v1`,
+      fireworks: `${this.baseUrl}forward?u=https://api.fireworks.ai/inference/v1`,
     };
   }
 
