@@ -74,6 +74,7 @@ export class Lava {
     parasail: string;
     nebius: string;
     fireworks: string;
+    cerebras: string;
   };
 
   /**
@@ -124,6 +125,7 @@ export class Lava {
       parasail: `${this.baseUrl}forward?u=https://api.parasail.io/v1`,
       nebius: `${this.baseUrl}forward?u=https://api.studio.nebius.com/v1`,
       fireworks: `${this.baseUrl}forward?u=https://api.fireworks.ai/inference/v1`,
+      cerebras: `${this.baseUrl}forward?u=https://api.cerebras.ai/v1`,
     };
   }
 
