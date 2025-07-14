@@ -139,6 +139,8 @@ export type RestRequest = {
 export type RestUsage = {
   items: {
     date: string;
+    start: string;
+    end: string;
     total_requests: number;
     total_usage_tokens: number;
     total_usage_cost: string;
