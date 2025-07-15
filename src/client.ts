@@ -77,6 +77,7 @@ export class Lava {
     cerebras: string;
     targon: string;
     gmicloud: string;
+    chutes: string;
   };
 
   /**
@@ -130,6 +131,7 @@ export class Lava {
       cerebras: `${this.baseUrl}forward?u=https://api.cerebras.ai/v1`,
       targon: `${this.baseUrl}forward?u=https://api.targon.com/v1`,
       gmicloud: `${this.baseUrl}forward?u=https://api.gmi-serving.com/v1`,
+      chutes: `${this.baseUrl}forward?u=https://llm.chutes.ai/v1`,
     };
   }
 
